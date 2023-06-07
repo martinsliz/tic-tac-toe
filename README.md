@@ -1,2 +1,88 @@
-# tic-tac-toe
-Using React Hooks to create a tic-tac-toe game
+# Tic-Tac-Toe using React Hooks
+
+## 6/7/23
+
+### By: Liz Martins - [GitHub](http://www.github.com/martinsliz) | [LinkedIn](https://www.linkedin.com/in/elizmartins)
+
+---
+
+## Description
+---
+Tic-Tac-Toe was one of the first things I learned in a recent software engineering immersive and I wanted to create an "update" using React.
+
+It will most definitely still have an 80s theme.
+
+---
+
+## **_Getting Started:_**
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+---
+
+**_Technologies Used_**
+
+---
+
+- React
+- JavaScript
+- HTML
+- CSS
+
+---
+
+### Screenshots
+
+![Image]('')
+![Imgur]('')
+
+---
+
+### Task Lists
+
+- [ ] 
+
+
+
+---
+
+### _Credits_
+
+[W3 Schools](https://www.w3schools.com/css/) || [MDN](https://developer.mozilla.org/en-US/) || [Unsplash](https://unsplash.com) || [Hypercolor](https://hypercolor.dev/)
+
+---
+
+### _Learn More_
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+
