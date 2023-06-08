@@ -3,9 +3,13 @@ import React from 'react'
 const Score = ({ points, currentPlayer }) => {
   const { xPoints, oPoints } = points
   return (
-    <div className="score">
-      <span className="score">X - {xPoints}</span>
-      <span>O - {oPoints}</span>
+    <div className="scoreboard">
+      <span className={`score x-score ${!currentPlayer && 'inactive'}`}>
+        X - {xPoints}
+      </span>
+      <span className={`score o-score ${currentPlayer && 'inactive'}`}>
+        O - {oPoints}
+      </span>
     </div>
   )
 }

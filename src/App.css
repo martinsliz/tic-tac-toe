@@ -51,3 +51,60 @@ body {
 .o {
   color: deeppink;
 }
+
+.scoreboard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 20rem;
+  font-size: 2rem;
+  margin: 3rem auto;
+  box-shadow: 0px 0px 0px white;
+  border-radius: 0.65rem;
+  font-weight: bold;
+}
+
+.score {
+  width: 100%;
+  box-shadow: 0px 0px 18px white;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  padding: 1rem 0rem;
+  color: #eb83f6;
+}
+
+.x-score {
+  margin-right: 12px;
+  color: #eb83f6;
+  border-bottom: 5px solid #eb83f6;
+  border-radius: 0.6rem;
+}
+
+.o-score {
+  color: rgb(44, 135, 255);
+  margin-left: 12px;
+  border-bottom: 5px solid rgb(44, 135, 255);
+  border-radius: 0.6rem;
+}
+
+.inactive {
+  border-bottom: 5px solid transparent;
+}
+
+button {
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 18px white;
+  background-color: transparent;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  margin: 2rem auto;
+  display: block;
+}
+
+button:hover {
+  background-color: aliceblue;
+}

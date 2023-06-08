@@ -18,6 +18,7 @@ const App = () => {
   const [currentPlayer, setCurrentPlayer] = useState(true)
   const [board, setBoard] = useState(Array(9).fill(null))
   const [points, setPoints] = useState({ xPoints: 0, oPoints: 0 })
+  const [gameOver, setGameOver] = useState(false)
   // const [playCount, setPlayCount] = useState(0)
 
   const handleClick = (boxIdx) => {
@@ -53,18 +54,26 @@ const App = () => {
       if (board[x] && board[x] === board[y] && board[y] === board[z]) {
         console.log('board' + board[x])
         return board[x]
+        setGameOver(true)
       }
     }
   }
 
+  const resetBoard = () => {
+    setGameOver(false)
+    setBoard(Array(9).fill(null))
+    setPoints({ xPoints: 0, oPoints: 0 })
+    setCurrentPlayer(currentPlayer)
+  }
+
   return (
     <div className="App">
-      <Score points={points} />
+      <Score points={points} currentPlayer={currentPlayer} />
       <Board board={board} onClick={handleClick} />
       <div>
         <button
           onClick={() => {
-            window.location.reload()
+            resetBoard()
           }}
         >
           START AGAIN
