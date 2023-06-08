@@ -13,6 +13,7 @@ body {
   font-family: 'Orbitron', sans-serif;
   color: white;
   text-shadow: 0 0 7px #fff, 0 0 8px #fff, 0 0 18px #fff;
+  background-color: cornflowerblue;
   /* background-image: url('https://i.imgur.com/TuAQkhD.jpg'); */
   background-size: cover;
 }
@@ -46,6 +47,6 @@ body {
   color: blueviolet;
 }
 
-o. {
+.o {
   color: deeppink;
 }
