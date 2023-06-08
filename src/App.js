@@ -1,5 +1,6 @@
 import './App.css'
 import { useState } from 'react'
+import Score from './components/Score'
 import Board from './components/Board'
 
 const App = () => {
@@ -15,9 +16,9 @@ const App = () => {
   ]
 
   const [currentPlayer, setCurrentPlayer] = useState(true)
-
   const [board, setBoard] = useState(Array(9).fill(null))
   const [points, setPoints] = useState({ xPoints: 0, oPoints: 0 })
+  // const [playCount, setPlayCount] = useState(0)
 
   const handleClick = (boxIdx) => {
     const updatedBoard = board.map((value, idx) => {
@@ -29,38 +30,45 @@ const App = () => {
     })
     setBoard(updatedBoard)
 
-    const checkWinner = (board) => {
-      for (let i = 0; i < winResults.length; i++) {
-        const [x, y, z] = winResults[i]
-
-        if (board[x] && board[x] === board[y] && board[y] === board[z]) {
-          console.log(board[x])
-          return board[x]
-        }
+    const winner = checkWinner(updatedBoard)
+    if (winner) {
+      if (winner === '0') {
+        let { oPoints } = points
+        oPoints += 1
+        setPoints({ ...points, oPoints })
+      } else {
+        let { xPoints } = points
+        xPoints += 1
+        setPoints({ ...points, xPoints })
       }
-
-      const winner = checkWinner(updatedBoard)
-      if (winner) {
-        if (winner === 'O') {
-          let { oPoints } = points
-          oPoints += 1
-          setPoints({ ...points, oPoints })
-        } else {
-          let { xPoints } = points
-          xPoints += 1
-          setPoints({ ...points, xPoints })
-        }
-      }
-      console.log(points)
     }
+    console.log(points)
     setCurrentPlayer(!currentPlayer)
+  }
+
+  const checkWinner = (board) => {
+    for (let i = 0; i < winResults.length; i++) {
+      const [x, y, z] = winResults[i]
+
+      if (board[x] && board[x] === board[y] && board[y] === board[z]) {
+        console.log('board' + board[x])
+        return board[x]
+      }
+    }
   }
 
   return (
     <div className="App">
+      <Score points={points} />
       <Board board={board} onClick={handleClick} />
       <div>
-        <button>START OVER</button>
+        <button
+          onClick={() => {
+            window.location.reload()
+          }}
+        >
+          START AGAIN
+        </button>
       </div>
     </div>
   )

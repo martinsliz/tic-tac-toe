@@ -13,7 +13,7 @@ body {
   font-family: 'Orbitron', sans-serif;
   color: white;
   text-shadow: 0 0 7px #fff, 0 0 8px #fff, 0 0 18px #fff;
-  background-color: cornflowerblue;
+  background-color: rgb(52, 28, 99);
   /* background-image: url('https://i.imgur.com/TuAQkhD.jpg'); */
   background-size: cover;
 }
@@ -23,15 +23,16 @@ body {
   display: grid;
   height: 500px;
   width: 500px;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(3, 10rem);
+  grid-template-rows: repeat(3, 10rem);
 }
 
 .box {
   flex: 33%;
   height: 100%;
-  border: 3px solid rgb(74, 29, 121);
-  border-radius: 2px;
+  box-shadow: 0px 0px 18px white;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
   display: grid;
   place-items: center;
