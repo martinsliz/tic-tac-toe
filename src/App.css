@@ -1,33 +1,45 @@
 .App {
   width: 100vw;
   height: 100vh;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-color: bisque;
+  margin-top: 55px;
+  text-align: center;
+  align-content: center;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  text-shadow: 0 0 7px #fff, 0 0 8px #fff, 0 0 18px #fff;
+  /* background-image: url('https://i.imgur.com/TuAQkhD.jpg'); */
+  background-size: cover;
+}
+
+.board {
+  margin: auto;
+  display: grid;
+  height: 500px;
+  width: 500px;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
 }
 
 .box {
-  background-color: white;
-  border: none;
-  border-radius: 3px;
-  box-shadow: 0px 0px 8px #888;
-  width: 5rem;
-  height: 5rem;
-  text-align: center;
-  font-size: 5em;
-  justify-content: center;
+  flex: 33%;
+  height: 100%;
+  border: 3px solid rgb(74, 29, 121);
+  border-radius: 2px;
   cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 65px;
 }
 
 .box:hover {
   background-color: rgb(192, 251, 251);
-  box-shadow: 0px 0px 15px #888;
+  box-shadow: 0px 0px 15px #eb83f6;
 }
 
 .x {

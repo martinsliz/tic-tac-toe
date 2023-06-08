@@ -1,6 +1,5 @@
 import './App.css'
 import Board from './components/Board'
-import Box from './components/Box'
 
 import React from 'react'
 
@@ -9,8 +8,7 @@ const App = () => {
   return (
     <div>
       <div>
-        <Board board={board} />
-        <Box value="X" onClick={null} />
+        <Board board={board} onClick={null} />
       </div>
     </div>
   )
