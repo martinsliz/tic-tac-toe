@@ -1,9 +1,6 @@
 .App {
   width: 100vw;
   height: 100vh;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 body {
@@ -12,36 +9,34 @@ body {
   align-content: center;
   font-family: 'Orbitron', sans-serif;
   color: white;
-  text-shadow: 0 0 7px #fff, 0 0 8px #fff, 0 0 18px #fff;
-  background-color: rgb(52, 28, 99);
-  /* background-image: url('https://i.imgur.com/TuAQkhD.jpg'); */
+  text-shadow: 0 0 8px #fff, 0 0 18px #fff, 0 0 18px #fff;
+  background-image: url('https://i.imgur.com/PgKuIlm.jpg');
   background-size: cover;
 }
 
 .board {
-  margin: auto;
   display: grid;
-  height: 500px;
-  width: 500px;
-  grid-template-columns: repeat(3, 10rem);
-  grid-template-rows: repeat(3, 10rem);
+  grid-template-columns: repeat(3, 9rem);
+  grid-template-rows: repeat(3, 9rem);
+  justify-content: center;
+  place-items: center;
 }
 
 .box {
-  flex: 33%;
-  height: 100%;
-  box-shadow: 0px 0px 18px white;
-  border: none;
+  display: grid;
+  width: 8rem;
+  height: 8rem;
+  place-content: center;
+  text-align: center;
+  box-shadow: 0px 0px 18px purple;
   border-radius: 12px;
   cursor: pointer;
-  display: grid;
-  place-items: center;
   font-size: 65px;
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 .box:hover {
-  background-color: rgb(192, 251, 251);
-  box-shadow: 0px 0px 15px #eb83f6;
+  box-shadow: 10px 10px 45px white;
 }
 
 .x {
@@ -58,46 +53,49 @@ body {
   align-items: center;
   justify-content: space-evenly;
   width: 20rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 3rem auto;
-  box-shadow: 0px 0px 0px white;
   border-radius: 0.65rem;
   font-weight: bold;
 }
 
 .score {
   width: 100%;
-  box-shadow: 0px 0px 18px white;
+  box-shadow: 0px 0px 8px white;
   border: none;
   border-radius: 12px;
   text-align: center;
   padding: 1rem 0rem;
-  color: #eb83f6;
 }
 
 .x-score {
   margin-right: 12px;
-  color: #eb83f6;
-  border-bottom: 5px solid #eb83f6;
+  color: blueviolet;
+  border-bottom: 5px solid mediumblue;
   border-radius: 0.6rem;
+  background-color: rgba(255, 105, 180, 0.6);
+  box-shadow: 10px 10px 45px white;
 }
 
 .o-score {
-  color: rgb(44, 135, 255);
+  color: deeppink;
   margin-left: 12px;
-  border-bottom: 5px solid rgb(44, 135, 255);
+  border-bottom: 5px solid blue;
   border-radius: 0.6rem;
+  box-shadow: 10px 10px 45px white;
+  background-color: rgba(255, 105, 180, 0.6);
 }
 
 .inactive {
   border-bottom: 5px solid transparent;
+  box-shadow: none;
 }
 
 button {
   border: none;
   border-radius: 0.5rem;
   box-shadow: 0px 0px 18px white;
-  background-color: transparent;
+  background-color: rgba(255, 105, 180, 0.6);
   color: white;
   font-size: 2rem;
   padding: 0.5rem 1rem;
@@ -106,5 +104,5 @@ button {
 }
 
 button:hover {
-  background-color: aliceblue;
+  box-shadow: 10px 10px 45px white;
 }
