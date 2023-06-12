@@ -106,3 +106,7 @@ button {
 button:hover {
   box-shadow: 10px 10px 45px white;
 }
+
+.draw {
+  color: red;
+}

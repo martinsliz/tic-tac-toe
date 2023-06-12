@@ -20,13 +20,15 @@ const App = () => {
   const [board, setBoard] = useState(Array(9).fill(null))
   const [points, setPoints] = useState({ xPoints: 0, oPoints: 0 })
   const [gameOver, setGameOver] = useState(false)
-  // const [playCount, setPlayCount] = useState(0)
+  let [playCount, setPlayCount] = useState(0)
 
   const handleClick = (boxIdx) => {
     const updatedBoard = board.map((value, idx) => {
       if (idx === boxIdx) {
         // console.log('boxIdx ' + boxIdx, 'idx ' + idx)
         // console.log('current player is ' + currentPlayer)
+        setPlayCount((playCount += 1))
+        console.log('playCount is ' + playCount)
         return currentPlayer ? 'X' : 'O'
       } else {
         return value
@@ -41,7 +43,7 @@ const App = () => {
 
         if (board[x] && board[x] === board[y] && board[y] === board[z]) {
           setGameOver(true)
-          console.log('this is ' + board[x])
+          console.log('Winner is ' + board[x])
           return board[x]
         }
       }
@@ -53,8 +55,7 @@ const App = () => {
         let { oPoints } = points
         oPoints += 1
         setPoints({ ...points, oPoints })
-        console.log('oPoints ' + oPoints)
-      } else {
+      } else if (winner === 'X') {
         let { xPoints } = points
         xPoints += 1
         setPoints({ ...points, xPoints })
@@ -66,13 +67,22 @@ const App = () => {
   const resetBoard = () => {
     setGameOver(false)
     setBoard(Array(9).fill(null))
+    setPlayCount(0)
+    setCurrentPlayer(currentPlayer)
   }
 
   return (
     <div className="App">
       <Score points={points} currentPlayer={currentPlayer} />
-      <Board board={board} onClick={gameOver ? isDisabled : handleClick} />
+      <Board
+        board={board}
+        onClick={gameOver ? isDisabled : handleClick}
+        playCount={playCount}
+      />
       <div>
+        <div className="draw">
+          {playCount === 9 ? <h2>Draw, play again!</h2> : <h3> </h3>}
+        </div>
         <button
           onClick={() => {
             resetBoard()
