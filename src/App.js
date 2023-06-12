@@ -25,8 +25,8 @@ const App = () => {
   const handleClick = (boxIdx) => {
     const updatedBoard = board.map((value, idx) => {
       if (idx === boxIdx) {
-        console.log('boxIdx ' + boxIdx, 'idx ' + idx)
-        console.log('current player is ' + currentPlayer)
+        // console.log('boxIdx ' + boxIdx, 'idx ' + idx)
+        // console.log('current player is ' + currentPlayer)
         return currentPlayer ? 'X' : 'O'
       } else {
         return value
@@ -35,12 +35,25 @@ const App = () => {
     console.log(updatedBoard)
     setBoard(updatedBoard)
 
+    const checkWinner = (board) => {
+      for (let i = 0; i < winResults.length; i++) {
+        const [x, y, z] = winResults[i]
+
+        if (board[x] && board[x] === board[y] && board[y] === board[z]) {
+          setGameOver(true)
+          console.log('this is ' + board[x])
+          return board[x]
+        }
+      }
+    }
+
     const winner = checkWinner(updatedBoard)
     if (winner) {
-      if (winner === '0') {
+      if (winner === 'O') {
         let { oPoints } = points
         oPoints += 1
         setPoints({ ...points, oPoints })
+        console.log('oPoints ' + oPoints)
       } else {
         let { xPoints } = points
         xPoints += 1
@@ -48,17 +61,6 @@ const App = () => {
       }
     }
     setCurrentPlayer(!currentPlayer)
-  }
-
-  const checkWinner = (board) => {
-    for (let i = 0; i < winResults.length; i++) {
-      const [x, y, z] = winResults[i]
-
-      if (board[x] && board[x] === board[y] && board[y] === board[z]) {
-        setGameOver(true)
-        return board[x]
-      }
-    }
   }
 
   const resetBoard = () => {
