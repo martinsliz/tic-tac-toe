@@ -19,16 +19,15 @@ const App = () => {
   const [currentPlayer, setCurrentPlayer] = useState(true)
   const [board, setBoard] = useState(Array(9).fill(null))
   const [points, setPoints] = useState({ xPoints: 0, oPoints: 0 })
+  let [xWin, setXwin] = useState(0)
+  let [oWin, setOwin] = useState(0)
   const [gameOver, setGameOver] = useState(false)
   let [playCount, setPlayCount] = useState(0)
 
-  const handleClick = (boxIdx) => {
+  const handleClick = (square) => {
     const updatedBoard = board.map((value, idx) => {
-      if (idx === boxIdx) {
-        // console.log('boxIdx ' + boxIdx, 'idx ' + idx)
-        // console.log('current player is ' + currentPlayer)
+      if (idx === square && value === null) {
         setPlayCount((playCount += 1))
-        console.log('playCount is ' + playCount)
         return currentPlayer ? 'X' : 'O'
       } else {
         return value
@@ -37,6 +36,12 @@ const App = () => {
     console.log(updatedBoard)
     setBoard(updatedBoard)
 
+    const resetBoard = () => {
+      setGameOver(false)
+      setBoard(Array(9).fill(null))
+      setPlayCount(0)
+      setCurrentPlayer(currentPlayer)
+    }
     const checkWinner = (board) => {
       for (let i = 0; i < winResults.length; i++) {
         const [x, y, z] = winResults[i]
@@ -45,6 +50,9 @@ const App = () => {
           setGameOver(true)
           console.log('Winner is ' + board[x])
           return board[x]
+        } else if (playCount === 9) {
+          alert('No win, keep playing!')
+          resetBoard()
         }
       }
     }
@@ -55,20 +63,17 @@ const App = () => {
         let { oPoints } = points
         oPoints += 1
         setPoints({ ...points, oPoints })
+        setOwin((oWin += 1))
+        resetBoard()
       } else if (winner === 'X') {
         let { xPoints } = points
         xPoints += 1
         setPoints({ ...points, xPoints })
+        setXwin((xWin += 1))
+        resetBoard()
       }
     }
     setCurrentPlayer(!currentPlayer)
-  }
-
-  const resetBoard = () => {
-    setGameOver(false)
-    setBoard(Array(9).fill(null))
-    setPlayCount(0)
-    setCurrentPlayer(currentPlayer)
   }
 
   return (
@@ -81,11 +86,15 @@ const App = () => {
       />
       <div>
         <div className="draw">
-          {playCount === 9 ? <h2>Draw, play again!</h2> : <h3> </h3>}
+          {playCount === 9 ? <h2>It's a Draw!</h2> : <h3> </h3>}
+        </div>
+        <div className="draw">
+          {xWin === 3 ? <h2>X Wins!!</h2> : <h5> </h5>}
+          {oWin === 3 ? <h2>O Wins!!</h2> : <h5> </h5>}
         </div>
         <button
           onClick={() => {
-            resetBoard()
+            window.location.reload()
           }}
         >
           PLAY AGAIN

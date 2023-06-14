@@ -1,11 +1,14 @@
-import Box from './Box'
+import Square from './Square'
 
 const Board = ({ board, onClick }) => {
   return (
     <div className="board">
       {board.map((value, idx) => {
         return (
-          <Box value={value} onClick={() => value === null && onClick(idx)} />
+          <Square
+            value={value}
+            onClick={() => value === null && onClick(idx)}
+          />
         )
       })}
     </div>
