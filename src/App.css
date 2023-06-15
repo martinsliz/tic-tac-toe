@@ -9,7 +9,6 @@ body {
   align-content: center;
   font-family: 'Orbitron', sans-serif;
   color: white;
-  text-shadow: 0 0 8px #fff, 0 0 18px #fff, 0 0 18px #fff;
   background-image: url('https://i.imgur.com/PgKuIlm.jpg');
   background-size: cover;
 }
@@ -32,6 +31,7 @@ body {
   border-radius: 12px;
   cursor: pointer;
   font-size: 65px;
+  text-shadow: 0 0 8px #fff, 0 0 18px #fff, 0 0 18px #fff;
   background-color: rgba(255, 255, 255, 0.35);
 }
 
@@ -41,10 +41,12 @@ body {
 
 .x {
   color: blueviolet;
+  text-shadow: 0 0 8px #fff, 0 0 18px #fff, 0 0 18px #fff;
 }
 
 .o {
   color: deeppink;
+  text-shadow: 0 0 8px #fff, 0 0 18px #fff, 0 0 18px #fff;
 }
 
 .scoreboard {
@@ -66,6 +68,7 @@ body {
   border-radius: 12px;
   text-align: center;
   padding: 1rem 0rem;
+  text-shadow: 0 0 8px #fff, 0 0 18px #fff, 0 0 18px #fff;
 }
 
 .x-score {
@@ -73,7 +76,7 @@ body {
   color: blueviolet;
   border-bottom: 5px solid mediumblue;
   border-radius: 0.6rem;
-  background-color: rgba(255, 105, 180, 0.6);
+  background-color: rgba(105, 118, 255, 0.5);
   box-shadow: 10px 10px 45px white;
 }
 
@@ -83,12 +86,19 @@ body {
   border-bottom: 5px solid blue;
   border-radius: 0.6rem;
   box-shadow: 10px 10px 45px white;
-  background-color: rgba(255, 105, 180, 0.6);
+  background-color: rgba(105, 118, 255, 0.6);
 }
 
 .inactive {
   border-bottom: 5px solid transparent;
   box-shadow: none;
+}
+
+.rules {
+  font-size: 2rem;
+  background: -webkit-linear-gradient(#eee, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 button {
@@ -107,7 +117,29 @@ button:hover {
   box-shadow: 10px 10px 45px white;
 }
 
-.draw {
-  color: red;
-  font-size: 3rem;
+.animate {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 2rem;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }

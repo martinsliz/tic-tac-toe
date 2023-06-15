@@ -19,9 +19,9 @@ const App = () => {
   const [currentPlayer, setCurrentPlayer] = useState(true)
   const [board, setBoard] = useState(Array(9).fill(null))
   const [points, setPoints] = useState({ xPoints: 0, oPoints: 0 })
+  const [gameOver, setGameOver] = useState(false)
   let [xWin, setXwin] = useState(0)
   let [oWin, setOwin] = useState(0)
-  const [gameOver, setGameOver] = useState(false)
   let [playCount, setPlayCount] = useState(0)
 
   const handleClick = (square) => {
@@ -33,7 +33,6 @@ const App = () => {
         return value
       }
     })
-    console.log(updatedBoard)
     setBoard(updatedBoard)
 
     const resetBoard = () => {
@@ -42,23 +41,21 @@ const App = () => {
       setPlayCount(0)
       setCurrentPlayer(currentPlayer)
     }
+
     const checkWinner = (board) => {
       for (let i = 0; i < winResults.length; i++) {
         const [x, y, z] = winResults[i]
-
         if (board[x] && board[x] === board[y] && board[y] === board[z]) {
           setGameOver(true)
-          console.log('Winner is ' + board[x])
           return board[x]
-        } else if (playCount === 9) {
-          alert('No win, keep playing!')
-          resetBoard()
         }
       }
     }
 
     const winner = checkWinner(updatedBoard)
-    if (winner) {
+    if (!winner && playCount === 9) {
+      setTimeout(resetBoard(), 3000)
+    } else if (winner) {
       if (winner === 'O') {
         let { oPoints } = points
         oPoints += 1
@@ -78,20 +75,23 @@ const App = () => {
 
   return (
     <div className="App">
-      <Score points={points} currentPlayer={currentPlayer} />
+      <Score
+        points={points}
+        currentPlayer={currentPlayer}
+        playCount={playCount}
+      />
+      <h2 className="rules">First to 3 wins the game!</h2>
       <Board
         board={board}
         onClick={gameOver ? isDisabled : handleClick}
         playCount={playCount}
       />
+      <div className="draw animate">
+        {playCount === 9 ? <h2>Draw! Keep playing!</h2> : <h5> </h5>}
+        {xWin === 3 ? <h2>X Wins! Play Again!</h2> : <h5> </h5>}
+        {oWin === 3 ? <h2>O Wins! Play Again!</h2> : <h5> </h5>}
+      </div>
       <div>
-        <div className="draw">
-          {playCount === 9 ? <h2>It's a Draw!</h2> : <h3> </h3>}
-        </div>
-        <div className="draw">
-          {xWin === 3 ? <h2>X Wins!!</h2> : <h5> </h5>}
-          {oWin === 3 ? <h2>O Wins!!</h2> : <h5> </h5>}
-        </div>
         <button
           onClick={() => {
             window.location.reload()
