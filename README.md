@@ -1,22 +1,66 @@
-# Tic-Tac-Toe using React Hooks
+# Tic-Tac-Toe with React
 
-## 6/7/23
+### 6/7/23
+&nbsp;
 
-### By: Liz Martins - [GitHub](http://www.github.com/martinsliz) | [LinkedIn](https://www.linkedin.com/in/elizmartins)
+
+## By: Liz Martins - [GitHub](http://www.github.com/martinsliz) | [LinkedIn](https://www.linkedin.com/in/elizmartins)
+
 
 ---
+
+<br>
+<br>
 
 ## Description
 ---
-Tic-Tac-Toe was one of the first things I learned in a recent software engineering immersive and I wanted to create an "update" using React.
+Good ol' Tic-Tac-Toe! I first built a version of this with Javascript while in the third week of a 12-week software engineering immersive, so I wanted to revisit it using React. I love a good 80s vibe, so I still kept that look, but polished it up a bit more using better CSS, a nostalgic background image, and some animation.
 
-It will most definitely still have an 80s theme.
+[The first version](https://github.com/martinsliz/u1_hw_tic_tac_toe)
+<br>
+<br>
+
+
+**_Technologies Used_**
 
 ---
 
-## **_Getting Started:_**
+- React
+- JavaScript
+- HTML
+- CSS
 
+
+<br>
+<br>
+<br>
+
+
+### Screenshots
+---
+<br>
+
+![Imgage](https://i.imgur.com/hpQ5QWt.png)
+
+---
+<br>
+<br>
+
+
+### _Credits_
+
+[W3 Schools](https://www.w3schools.com/css/) || [MDN](https://developer.mozilla.org/en-US/) || [Unsplash](https://unsplash.com) || [Imgur](https://imgur.com/) || [Alvaro Trigo blog - fullPage.js](https://alvarotrigo.com/blog/css-text-animations/) || [YouTube](https://www.youtube.com/)
+---
+<br>
+<br>
+
+
+## **_Getting Started:_**
+---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+<br>
+<br>
 
 ### Available Scripts
 
@@ -45,42 +89,11 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
----
-
-**_Technologies Used_**
-
----
-
-- React
-- JavaScript
-- HTML
-- CSS
-
----
-
-### Screenshots
-
-![Image]('')
-![Imgur]('')
-
----
-
-### Task Lists
-
-- [ ] 
-
-
-
----
-
-### _Credits_
-
-[W3 Schools](https://www.w3schools.com/css/) || [MDN](https://developer.mozilla.org/en-US/) || [Unsplash](https://unsplash.com) || [Hypercolor](https://hypercolor.dev/)
-
----
+<br>
+<br>
 
 ### _Learn More_
-
+---
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
